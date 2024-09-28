@@ -11,3 +11,4 @@ def create_courier():
     response = requests.post(f'{Config.URL}api/v1/courier', json=payload)
     assert response.status_code == 201, f'Ожидается статус: 201, получен статус: {response.status_code}'
     yield payload
+    requests.delete(f'{Config.URL}api/v1/courier/["id"]')

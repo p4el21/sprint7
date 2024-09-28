@@ -3,6 +3,7 @@ from src.config import Config
 import allure
 
 class TestOrdersList:
+    @allure.title('Проверка получения списка заказов')
     @allure.description('Тест на получение списка заказов')
     def test_get_orders_list(self):
         response = requests.get(f'{Config.URL}api/v1/orders')
